@@ -54,7 +54,7 @@ const ProjectsPage = () => {
   const isDark = theme === 'dark';
 
   return (
-    <section className={`${isDark ? 'bg-black' : 'bg-white'} min-h-screen py-20 px-6 transition-colors duration-700`}>
+    <section className={`${isDark ? 'bg-black' : 'bg-white'} sm:max-h-screen min-h-csreen py-20 px-6 transition-colors duration-700`}>
       {/* Heading */}
       <div className="max-w-7xl mx-auto text-center mb-16 px-4 sm:px-6 lg:px-8">
         <motion.h1
