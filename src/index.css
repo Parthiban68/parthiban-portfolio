@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* html, body, #root {
+    @apply m-0 w-full h-full overflow-x-hidden;
+  } */
+:root {
+    --primary: 83 76 255;
+}
+
+.text-primary {
+    color: rgb(var(--primary));
+}
+
+.bg-primary {
+    background-color: rgb(var(--primary));
+}
+
+.dark .bg-gradient-to-br {
+    background-image: linear-gradient(to bottom right, #050505, #111111, #151515);
+}
+
+body {
+    @apply bg-black text-white;
+  }
