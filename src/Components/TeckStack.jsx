@@ -1,41 +1,90 @@
 import React from 'react';
-import { FaReact, FaNodeJs, FaDatabase } from 'react-icons/fa';
-import { SiMongodb, SiExpress } from 'react-icons/si';
+import { FaReact, FaNodeJs, FaDatabase, FaJava, FaDocker } from 'react-icons/fa';
+import { SiMongodb, SiExpress, SiPostgresql, SiFlutter, SiDart, SiTailwindcss, SiThreedotjs, SiMicrodotblog } from 'react-icons/si';
 import { motion } from 'framer-motion';
 import { useTheme } from '../Utils/ThemeContext';
 
 const techStack = [
   {
-    name: 'MongoDB',
-    icon: SiMongodb,
-    color: '#22c55e',
-    description: 'NoSQL database optimized for scalability and developer agility.',
+    name: 'Node.js',
+    icon: FaNodeJs,
+    color: '#16a34a',
+    // description: 'JavaScript runtime built on Chrome’s V8 engine for scalable network apps.',
   },
   {
     name: 'Express.js',
     icon: SiExpress,
     color: '#475569',
-    description: 'Minimal and flexible Node.js web application framework.',
+    // description: 'Minimal and flexible Node.js web application framework.',
   },
   {
     name: 'React',
     icon: FaReact,
     color: '#22d3ee',
-    description: 'Declarative, efficient, and flexible JavaScript library for building user interfaces.',
+    // description: 'Declarative, efficient, and flexible JavaScript library for building user interfaces.',
   },
   {
-    name: 'Node.js',
-    icon: FaNodeJs,
-    color: '#16a34a',
-    description: 'JavaScript runtime built on Chrome’s V8 engine for scalable network apps.',
+    name: 'PostgreSQL',
+    icon: SiPostgresql,
+    color: '#336791',
+    // description: 'Powerful, open source object-relational database system with strong reliability and feature set.',
+  },
+  {
+    name: 'MongoDB',
+    icon: SiMongodb,
+    color: '#22c55e',
+    // description: 'NoSQL database optimized for scalability and developer agility.',
   },
   {
     name: 'Database',
     icon: FaDatabase,
     color: '#4ade80',
-    description: 'Robust data storage optimized for high performance and reliability.',
+    // description: 'Robust data storage optimized for high performance and reliability.',
+  },
+  {
+    name: 'Flutter',
+    icon: SiFlutter,
+    color: '#02569B',
+    // description: 'UI toolkit by Google for building natively compiled applications for mobile, web, and desktop.',
+  },
+  {
+    name: 'Dart',
+    icon: SiDart,
+    color: '#0175C2',
+    // description: 'A client-optimized programming language for fast apps on any platform.',
+  },
+  {
+    name: 'Tailwind CSS',
+    icon: SiTailwindcss,
+    color: '#38BDF8',
+    // description: 'Utility-first CSS framework packed with classes for rapid UI development.',
+  },
+  {
+    name: 'Three.js',
+    icon: SiThreedotjs,
+    color: '#FFFFFF',
+    // description: 'JavaScript 3D library creating and displaying animated 3D graphics in web browsers.',
+  },
+  {
+    name: 'Microservices',
+    icon: SiMicrodotblog,
+    color: '#FFCA28',
+    // description: 'Architectural style structuring an application as a collection of loosely coupled services.',
+  },
+  {
+    name: 'Docker',
+    icon: FaDocker,
+    color: '#2496ED',
+    // description: 'Platform to develop, ship, and run applications within lightweight containers.',
+  },
+  {
+    name: 'Java',
+    icon: FaJava,
+    color: '#007396',
+    // description: 'Robust, class-based, object-oriented programming language widely used in enterprise applications.',
   },
 ];
+
 
 const containerVariants = {
   hidden: { opacity: 0, y: 20 },
@@ -58,9 +107,9 @@ const itemVariants = {
     transition: { type: 'spring', stiffness: 260, damping: 20 }
   },
   hover: (color) => ({
-    scale: 1.15,
+    scale: 1.05,
     boxShadow: `0 0 20px 6px ${color}`,
-    transition: { type: 'spring', stiffness: 300, damping: 15 },
+    transition: { type: 'spring', stiffness: 100, damping: 15 },
   }),
 };
 
@@ -84,7 +133,7 @@ const TechStack = () => {
         <p className={`text-lg max-w-2xl mx-auto ${
           isDark ? 'text-gray-400' : 'text-gray-600'
         }`}>
-          Mastering the power of MongoDB, Express, React, and Node.js, crafting bulletproof scalable full-stack apps with elegance.
+          Mastering the power of Node.js, Express, React, and , crafting bulletproof scalable full-stack apps with elegance.
         </p>
       </motion.div>
 
