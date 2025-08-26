@@ -1,5 +1,5 @@
-import React from 'react';
-import { FaMoon, FaSun } from "react-icons/fa6";
+import React, { useState } from 'react';
+import { FaMoon, FaSun, FaBars, FaTimes } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
 import { useTheme } from '../Utils/ThemeContext'; // Adjust path as needed
 
@@ -7,77 +7,106 @@ const Hero = () => {
   const { theme, toggleTheme } = useTheme();
   const isDark = theme === 'dark';
 
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  // Toggle mobile menu open/close
+  const toggleMenu = () => setMenuOpen((prev) => !prev);
+
   return (
-    <div className={`min-h-screen font-mono ${
-      isDark ? 'bg-black text-white' : 'bg-white text-black'}`}
-    >
+    <div className={`min-h-screen font-mono ${isDark ? 'bg-black text-white' : 'bg-white text-black'}`}>
       {/* Navbar */}
       <nav>
-        <div className={`flex justify-between items-center px-10 py-6 max-w-[70vw] mx-auto ${
-          isDark ? 'bg-[#0f0f0f]' : 'bg-gray-100'}`}
+        <div className={`flex justify-between items-center px-6 sm:px-10 py-6 max-w-[90vw] mx-auto ${
+          isDark ? 'bg-[#0f0f0f]' : 'bg-gray-100'} rounded-md`}
         >
           <NavLink to="/">
-            <h1 className={`font-semibold text-lg ${
-              isDark ? 'text-white' : 'text-black'}`}
-            >
+            <h1 className={`font-semibold text-lg sm:text-xl ${isDark ? 'text-white' : 'text-black'}`}>
               <span className="text-[#00FF84]">Parthiban</span>.DEV
             </h1>
           </NavLink>
-          <ul className={`hidden md:flex space-x-8 text-sm ${
-            isDark ? 'text-white' : 'text-black'}`}
-          >
+
+          {/* Desktop Nav Links */}
+          <ul className={`hidden md:flex space-x-8 text-sm sm:text-base ${isDark ? 'text-white' : 'text-black'}`}>
             <li>ABOUT ME</li>
-            <li>TECK STACK</li>
+            <li>TECH STACK</li>
             <li>EXPERIENCE</li>
             <li>PROJECTS</li>
             <li>RESUME</li>
           </ul>
 
-          {/* Theme toggle button */}
-          <button
-            onClick={toggleTheme}
-            className={`border px-4 py-1 rounded text-xs transition ${
-              isDark
-                ? 'border-white hover:bg-white hover:text-black'
-                : 'border-black hover:bg-black hover:text-white'}`}
-            aria-label="Toggle dark/light theme"
-          >
-            {isDark ? <FaSun size={20} /> : <FaMoon size={20} />}
-          </button>
+          {/* Theme toggle & mobile menu button container */}
+          <div className="flex items-center space-x-4">
+            <button
+              onClick={toggleTheme}
+              className={`border px-3 py-1 rounded text-xs transition ${
+                isDark
+                  ? 'border-white hover:bg-white hover:text-black'
+                  : 'border-black hover:bg-black hover:text-white'}`}
+              aria-label="Toggle dark/light theme"
+            >
+              {isDark ? <FaSun size={20} /> : <FaMoon size={20} />}
+            </button>
+
+            {/* Mobile menu toggle button */}
+            <button
+              onClick={toggleMenu}
+              className={`md:hidden focus:outline-none ${isDark ? 'text-white' : 'text-black'}`}
+              aria-label="Toggle menu"
+              aria-expanded={menuOpen}
+            >
+              {menuOpen ? <FaTimes size={26} /> : <FaBars size={26} />}
+            </button>
+          </div>
         </div>
+
+        {/* Mobile Menu Dropdown */}
+        {menuOpen && (
+          <div className={`${isDark ? 'bg-[#0f0f0f]' : 'bg-gray-100'} md:hidden px-6 py-4 max-w-[90vw] mx-auto rounded-b-md shadow-lg`}>
+            <ul className={`flex flex-col space-y-4 text-base ${isDark ? 'text-white' : 'text-black'}`}>
+              <li className="cursor-pointer" onClick={() => setMenuOpen(false)}>ABOUT ME</li>
+              <li className="cursor-pointer" onClick={() => setMenuOpen(false)}>TECH STACK</li>
+              <li className="cursor-pointer" onClick={() => setMenuOpen(false)}>EXPERIENCE</li>
+              <li className="cursor-pointer" onClick={() => setMenuOpen(false)}>PROJECTS</li>
+              <li className="cursor-pointer" onClick={() => setMenuOpen(false)}>RESUME</li>
+            </ul>
+          </div>
+        )}
       </nav>
 
       {/* Hero Section */}
-      <section className={`text-center py-20 px-5 bg-heroGlow bg-no-repeat ${
+      <section className={`text-center py-20 px-5 sm:px-10 bg-heroGlow bg-no-repeat ${
         isDark ? '' : 'bg-heroGlow-light'}`}
       >
-        <h2 className={`text-3xl md:text-6xl font-bold leading-tight ${
+        <h2 className={`text-2xl sm:text-4xl md:text-6xl font-bold leading-tight ${
           isDark ? 'text-white' : 'text-black'}`}
         >
           Passionate&nbsp;
           <span className="text-[#00FF84]">Full‑Stack Developer</span><br className="hidden md:block" />
-          <span className={isDark ? 'text-gray-300 text-5xl' : 'text-gray-700 text-5xl'}>
+          <span className={isDark ? 'text-gray-300 text-4xl sm:text-5xl' : 'text-gray-700 text-4xl sm:text-5xl'}>
             Crafting Scalable Microservices
           </span>
         </h2>
 
-        <p className={`text-lg mt-4 max-w-2xl mx-auto ${
+        <p className={`text-base sm:text-lg mt-4 max-w-2xl mx-auto ${
           isDark ? 'text-gray-400' : 'text-gray-800'}`}
         >
           I'm Parthiban — a MERN Stack + Backend developer with a strong foundation in microservices, PostgreSQL,
           and modern backend architecture. Currently working at XYZ as a backend engineer, building production-grade APIs and scalable systems.
         </p>
 
-        <div className="flex justify-center gap-6 mt-10">
+        <div className="flex flex-col sm:flex-row justify-center gap-6 mt-10 max-w-md mx-auto sm:max-w-none">
           <NavLink
             to="/projects"
-            className="bg-[#00FF84] text-black font-medium px-5 py-2 text-sm rounded shadow hover:bg-[#00e674] transition"
+            className="bg-[#00FF84] text-black font-medium px-5 py-2 text-sm rounded shadow hover:bg-[#00e674] transition text-center"
           >
             💻 VIEW PROJECTS
           </NavLink>
           <NavLink
             to="/contact"
-            className={`${isDark ?'border border-white px-5 py-2 text-sm rounded hover:bg-white hover:text-black transition': "bg-white text-black font-medium px-5 py-2 text-sm rounded shadow hover:text-white transition border border-black hover:bg-black" }`}
+            className={`${isDark
+              ? 'border border-white px-5 py-2 text-sm rounded hover:bg-white hover:text-black transition text-center'
+              : 'bg-white text-black font-medium px-5 py-2 text-sm rounded shadow hover:text-white transition border border-black hover:bg-black'
+            }`}
           >
             ✉️ CONTACT ME
           </NavLink>
