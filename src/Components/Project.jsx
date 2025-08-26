@@ -354,8 +354,9 @@ const ProjectsPage = () => {
         {projects.map((project, idx) => (
           <motion.article
             key={idx}
-            className={`${gridClasses[idx]} relative rounded-3xl border-2 border-gray-300 bg-white dark:bg-gray-900 dark:border-gray-700 cursor-pointer shadow-md 
-              transition-all duration-300 transform hover:-translate-y-2 hover:border-gray-400 flex flex-col brightness-75 hover:brightness-110`}
+            className={`${gridClasses[idx]} relative rounded-3xl border-2 ${isDark ? 'border-gray-800 hover:border-gray-900 bg-gradient-to-br from-gray-900 via-gray-800 to-black brightness-90 hover:brightness-125 ' : 'border-gray-100 hover:border-gray-100 bg-gray-50 brightness-75 hover:brightness-110'
+              } cursor-pointer shadow-md 
+              transition-all duration-300 transform hover:-translate-y-2 hover:border-gray-400 flex flex-col brightness-90 hover:brightness-125`}
             variants={cardVariants}
             tabIndex={0}
             aria-label={`Project titled ${project.title}`}

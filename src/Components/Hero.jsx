@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { FaMoon, FaSun, FaBars, FaTimes } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
-import { useTheme } from '../Utils/ThemeContext'; // Adjust path as needed
+import { useTheme } from '../Utils/ThemeContext'; 
 
 const Hero = () => {
   const { theme, toggleTheme } = useTheme();
@@ -16,8 +16,8 @@ const Hero = () => {
     <div className={`min-h-screen font-mono ${isDark ? 'bg-black text-white' : 'bg-white text-black'}`}>
       {/* Navbar */}
       <nav>
-        <div className={`flex justify-between items-center px-6 sm:px-10 py-6 max-w-[90vw] mx-auto ${
-          isDark ? 'bg-[#0f0f0f]' : 'bg-gray-100'} rounded-md`}
+        <div className={`flex justify-between items-center px-6 sm:px-10 py-6 max-w-[80vw] mx-auto ${
+          isDark ? 'bg-gray-900' : 'bg-gray-100'} rounded-md`}
         >
           <NavLink to="/">
             <h1 className={`font-semibold text-lg sm:text-xl ${isDark ? 'text-white' : 'text-black'}`}>
@@ -141,6 +141,7 @@ const Hero = () => {
           </pre>
         </div>
       </section>
+      
     </div>
   );
 };
