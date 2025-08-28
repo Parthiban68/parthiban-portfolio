@@ -5,13 +5,14 @@ import { NavLink } from "react-router-dom";
 import PageTransition from "../Components/PageTransition";
 import { useTheme } from '../Utils/ThemeContext';
 
+
 const OpeningPage = () => {
   const { theme, toggleTheme } = useTheme();
   const isDark = theme === 'dark';
 
   return (
     <PageTransition>
-      <div className={`min-h-screen w-full flex flex-col font-sans bg-no-repeat ${isDark ? 'bg-black text-white bg-heroGlow' : 'bg-white text-black bg-heroGlow'}`}>
+      <div className={`min-h-screen w-full flex flex-col font-sans bg-no-repeat ${isDark ? 'bg-black text-white bg-heroGlow' : 'bg-white text-black'}`}>
         {/* grid overlay */}
         <div className={`pointer-events-none fixed inset-0 -z-10 bg-grid ${isDark ? 'bg-[length:32px_32px]' : 'bg-[length:40px_40px]'} md:bg-[length:40px_40px]`} />
 
@@ -70,7 +71,7 @@ const OpeningPage = () => {
               </div>
 
               {/* socials */}
-              <div className={`mt-8 sm:mt-10 flex items-center justify-center lg:justify-start gap-6 text-xl sm:text-2xl ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>
+              <div className={`mt-8 mb-10 sm:mb-0 sm:mt-10 flex items-center justify-center lg:justify-start gap-6 text-xl sm:text-2xl ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>
                 <a href="https://github.com/Parthiban68" target="_blank" rel="noreferrer" className={`hover:${isDark ? 'text-white' : 'text-black'}`}>
                   <FaGithub />
                 </a>

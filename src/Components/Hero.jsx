@@ -4,11 +4,8 @@ import { NavLink } from "react-router-dom";
 import { useTheme } from '../Utils/ThemeContext';
 import { Link } from 'react-scroll';
 import toast from 'react-hot-toast';
-import { FaSpinner } from 'react-icons/fa';
-
 
 const Hero = () => {
-  const [message, setMessage] = useState('');
   const { theme, toggleTheme } = useTheme();
   const isDark = theme === 'dark';
 
@@ -51,7 +48,7 @@ const Hero = () => {
   return (
     <div className={` font-mono ${isDark ? 'bg-black text-white' : 'bg-white text-black'}`}>
       {/* Navbar */}
-      <nav className={`fixed w-full z-10 top-0 ${isDark ? '' : 'bg-white'}`}>
+      <nav className={`fixed w-full z-20 top-0 ${isDark ? '' : 'bg-white'}`}>
         <div className={`flex justify-between items-center px-6 sm:px-10 py-[1.55rem] sm:max-w-[80vw] mx-auto ${isDark ? 'bg-gray-900' : 'bg-gray-200'} rounded-b-md`}
         >
           <NavLink to="/">
