@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { FaEnvelope, FaPhone, FaMapMarkerAlt } from "react-icons/fa";
 import { useTheme } from "../Utils/ThemeContext";
+import { Element } from "react-scroll";
 
 const ContactPage = () => {
   const { theme } = useTheme();
@@ -40,6 +41,7 @@ const ContactPage = () => {
   ];
 
   return (
+    <Element name="contactus">
     <section
       className={`relative min-h-screen overflow-hidden px-6 py-20 transition-colors duration-700
       ${isDark ? "bg-black text-white" : "bg-white text-black"}`}
@@ -83,7 +85,7 @@ const ContactPage = () => {
         {/* Contact Info Sidebar */}
         <aside
       className={`md:w-1/3 rounded-3xl p-10 shadow-lg backdrop-blur-md border ${
-        isDark ? "bg-gray-900 border-green-700" : "bg-white border-green-300"
+        isDark ? "bg-gradient-to-br from-gray-900 via-gray-800 to-black border-gray-700" : "bg-gray-200 border-green-300"
       } flex flex-col gap-12`}
     >
       <h2
@@ -140,7 +142,7 @@ const ContactPage = () => {
         <motion.form
           onSubmit={handleSubmit}
           className={`md:w-2/3 rounded-3xl p-10 shadow-xl backdrop-blur-sm border flex flex-col gap-6 ${
-            isDark ? "bg-gray-900 border-green-700" : "bg-white border-green-300"
+            isDark ? "bg-gradient-to-br from-gray-900 via-gray-800 to-black border-gray-700" : "bg-gray-200 border-green-300"
           }`}
         >
           {submitted ? (
@@ -211,6 +213,7 @@ const ContactPage = () => {
         </motion.form>
       </motion.div>
     </section>
+    </Element>
   );
 };
 

@@ -2,13 +2,14 @@ import React from 'react';
 import { FaBriefcase } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 import { useTheme } from '../Utils/ThemeContext'; // Adjust path as needed
+import { Element } from 'react-scroll';
 
 const experience = {
   role: 'Backend Engineer',
   company: 'XYZ Ltd.',
   period: '2022 – Present',
   icon: FaBriefcase,
-  color: '#22c55e', // Portfolio green accent
+  color: '#22c55e',
   responsibilities: [
     'Built RESTful APIs using Node.js, Express, and MongoDB.',
     'Led migration from monolith to microservices, improving scalability.',
@@ -31,6 +32,7 @@ const ExperienceSingleCard = () => {
   const Icon = experience.icon;
 
   return (
+    <Element name="experience">
     <section className={`min-h-screen flex flex-col items-center justify-center px-4 py-10 ${isDark ? 'bg-black' : 'bg-gray-50'} transition-colors duration-500`}>
       <motion.h1
         initial={{ opacity: 0, y: -32 }}
@@ -69,7 +71,7 @@ const ExperienceSingleCard = () => {
           w-full
           ${isDark
             ? 'bg-gradient-to-br from-gray-900 via-gray-800 to-black border-gray-800'
-            : 'bg-white/80 backdrop-blur-xl border-gray-100'}
+            : 'bg-white/80 backdrop-blur-xl border-gray-200'}
           transition-colors 
           duration-500
           flex 
@@ -133,6 +135,7 @@ const ExperienceSingleCard = () => {
         </div>
       </motion.div>
     </section>
+    </Element>
   );
 };
 

@@ -1,6 +1,7 @@
 import "./App.css";
 import { Routes, Route, useLocation } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
+import { Toaster } from 'react-hot-toast';
 
 import {ThemeProvider} from "./Utils/ThemeContext"
 
@@ -16,6 +17,7 @@ function App() {
           <Route path="/" element={<OpeningPage />} />
           <Route path="/home" element={<HomePage />} />
         </Routes>
+        <Toaster position="top-right" reverseOrder={false} />
       </AnimatePresence>
     </ThemeProvider>
   );

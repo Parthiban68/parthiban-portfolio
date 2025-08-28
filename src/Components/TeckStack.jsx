@@ -3,6 +3,7 @@ import { FaReact, FaNodeJs, FaDatabase, FaJava, FaDocker } from 'react-icons/fa'
 import { SiMongodb, SiExpress, SiPostgresql, SiFlutter, SiDart, SiTailwindcss, SiThreedotjs, SiMicrodotblog } from 'react-icons/si';
 import { motion } from 'framer-motion';
 import { useTheme } from '../Utils/ThemeContext';
+import { Element } from 'react-scroll';
 
 const techStack = [
   { name: 'Node.js', icon: FaNodeJs, color: '#16a34a', description: 'JavaScript runtime on Chrome V8.' },
@@ -52,6 +53,7 @@ const TechStack = () => {
   const isDark = theme === 'dark';
 
   return (
+    <Element name='tech'>
     <section className={`${isDark ? 'bg-black' : 'bg-white'} w-full flex flex-col py-24 px-6 transition-colors duration-500`}>
       <motion.div
         className="max-w-7xl mx-auto text-center mb-16 px-4 sm:px-6 lg:px-8"
@@ -77,7 +79,7 @@ const TechStack = () => {
         {techStack.map(({ name, icon: Icon, color, description }) => (
           <motion.div
             key={name}
-            className={`${isDark ? 'bg-gray-900' : 'bg-gray-100'} rounded-3xl p-6 flex flex-col items-center cursor-pointer relative overflow-hidden shadow-md transition-colors duration-500`}
+            className={`${isDark ? 'bg-gray-900' : 'bg-gray-200'} rounded-3xl p-6 flex flex-col items-center cursor-pointer relative overflow-hidden shadow-md transition-colors duration-500`}
             variants={itemVariants}
             custom={color}
             whileHover="hover"
@@ -108,6 +110,7 @@ const TechStack = () => {
         ))}
       </motion.div>
     </section>
+    </Element>
   );
 };
 

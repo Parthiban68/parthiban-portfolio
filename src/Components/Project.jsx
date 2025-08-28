@@ -266,6 +266,7 @@ import React from 'react';
 import { FaGithub } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 import { useTheme } from '../Utils/ThemeContext';
+import { Element } from 'react-scroll';
 
 const projects = [
   {
@@ -327,6 +328,7 @@ const ProjectsPage = () => {
   ];
 
   return (
+    <Element name="projects">
     <section className={`${isDark ? 'bg-black' : 'bg-white'} min-h-screen py-20 px-4 sm:px-6 lg:px-20 transition-colors duration-700`}>
       {/* Heading */}
       <div className="max-w-7xl mx-auto text-center">
@@ -354,7 +356,7 @@ const ProjectsPage = () => {
         {projects.map((project, idx) => (
           <motion.article
             key={idx}
-            className={`${gridClasses[idx]} relative rounded-3xl border-2 ${isDark ? 'border-gray-800 hover:border-gray-900 bg-gradient-to-br from-gray-900 via-gray-800 to-black brightness-90 hover:brightness-125 ' : 'border-gray-100 hover:border-gray-100 bg-gray-50 brightness-75 hover:brightness-110'
+            className={`${gridClasses[idx]} relative rounded-3xl border-2 ${isDark ? 'border-gray-800 hover:border-gray-900 bg-gradient-to-br from-gray-900 via-gray-800 to-black brightness-90 hover:brightness-125 ' : 'border-gray-100 hover:border-gray-100 bg-gray-200 brightness-75 hover:brightness-110'
               } cursor-pointer shadow-md 
               transition-all duration-300 transform hover:-translate-y-2 hover:border-gray-400 flex flex-col brightness-90 hover:brightness-125`}
             variants={cardVariants}
@@ -376,7 +378,7 @@ const ProjectsPage = () => {
                 href={project.gitLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-4 inline-flex items-center text-green-400 font-semibold hover:text-green-500"
+                className="mt-4 inline-flex items-center text-white font-semibold hover:text-gray-400"
                 aria-label={`View GitHub repository for ${project.title}`}
               >
                 <FaGithub className="mr-2" size={20} /> View Code
@@ -386,6 +388,7 @@ const ProjectsPage = () => {
         ))}
       </motion.div>
     </section>
+    </Element>
   );
 };
 
