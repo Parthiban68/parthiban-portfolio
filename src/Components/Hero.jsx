@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
-import { FaMoon, FaSun, FaBars, FaTimes } from "react-icons/fa";
+import { FaBars, FaTimes } from "react-icons/fa";
+import { HiOutlineSun } from "react-icons/hi";
+import { HiOutlineMoon } from "react-icons/hi";
 import { NavLink } from "react-router-dom";
 import { useTheme } from '../Utils/ThemeContext';
 import { Link } from 'react-scroll';
@@ -87,7 +89,7 @@ const Hero = () => {
                 : 'border-black hover:bg-black hover:text-white'}`}
               aria-label="Toggle dark/light theme"
             >
-              {isDark ? <FaSun size={20} /> : <FaMoon size={20} />}
+              {isDark ? <HiOutlineSun size={20} /> : <HiOutlineMoon size={20} />}
             </button>
 
             {/* Mobile menu toggle button */}

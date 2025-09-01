@@ -397,6 +397,8 @@
 // export default ProjectsPage;
 import React from 'react';
 import { FaGithub } from 'react-icons/fa';
+import { FaGlobe } from 'react-icons/fa';
+import { FaArrowRight, FaExternalLinkAlt } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 import { useTheme } from '../Utils/ThemeContext';
 import { Element } from 'react-scroll';
@@ -408,13 +410,15 @@ const projects = [
     title: 'TheBusstand.com',
     description: 'thebusstand.com is a scalable online bus ticket booking platform designed to simplify intercity travel. It enables users to search, compare, and book bus tickets with real-time seat availability, digital ticket generation, and instant notifications.',
     imageUrl: TBS_WEB,
-    gitLink: 'https://thebusstand.com',
+    Link: 'https://thebusstand.com',
+    type: "link"
   },
   {
     title: 'TheBusstand.com CRM',
     description: 'crm.thebusstand.com is a comprehensive CRM system built to streamline bus operator, client, and partner management. It enables operators to manage buses, routes, employees, offers, and cancellations efficiently while maintaining real-time synchronization with the main ticketing platform.',
     imageUrl: TBS_CRM,
-    gitLink: 'https://crm.thebusstand.com',
+    Link: 'https://crm.thebusstand.com',
+    type: "link"
   },
 ];
 
@@ -431,9 +435,8 @@ const ProjectsPage = () => {
   const { theme } = useTheme();
   const isDark = theme === 'dark';
 
-  // Set matching bg color for section and cards
   const sectionBg = isDark ? 'bg-black' : 'bg-white';
-  const cardBg = isDark ? 'bg-black' : 'bg-white';
+  const cardBg = isDark ? 'bg-gradient-to-br from-gray-900 via-gray-800 to-black' : 'bg-white';
   const cardBorder = isDark ? 'border-white/10' : 'border-black/10';
 
   return (
@@ -537,13 +540,22 @@ function ProjectCard({ project, isDark, align, cardBg, cardBorder }) {
       <h3 className={`text-xl font-bold mb-2 ${isDark ? 'text-white' : 'text-black'}`}>{project.title}</h3>
       <p className={`text-sm mb-4 ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>{project.description}</p>
       <a
-        href={project.gitLink}
+        href={project.Link}
         target="_blank"
         rel="noopener noreferrer"
         className={`inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-white bg-black hover:bg-white/40 text-white font-semibold transition`}
         aria-label={`View project online: ${project.title}`}
       >
-        <FaGithub size={18} /> Visit
+        {project.type === "link" ? (
+          <span className="flex items-center gap-2">
+            <FaGlobe size={18} /> Visit
+          </span>
+        ) : (
+          <span className="flex items-center gap-1">
+            <FaGithub size={18} /> Visit
+          </span>
+        )}
+
       </a>
     </div>
   );

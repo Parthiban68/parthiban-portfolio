@@ -1,5 +1,8 @@
 import React from 'react';
-import { FaMoon, FaSun, FaGithub, FaLinkedin, FaXTwitter, FaLayerGroup } from "react-icons/fa6";
+import { FaGithub, FaLinkedin, FaXTwitter, FaLayerGroup } from "react-icons/fa6";
+import { FaLaptopCode } from "react-icons/fa";
+import { HiOutlineSun } from "react-icons/hi";
+import { HiOutlineMoon } from "react-icons/hi";
 import avatar from "../assets/avatar.png";
 import { NavLink } from "react-router-dom";
 import PageTransition from "../Components/PageTransition";
@@ -19,13 +22,13 @@ const OpeningPage = () => {
         {/* ---------- NAV ---------- */}
         <header className={`flex items-center justify-between px-4 sm:px-6 lg:px-32 py-3 border-b ${isDark ? 'border-white/10' : 'border-black/10'}`}>
           <h1 className="flex items-center gap-2 font-semibold text-base sm:text-lg">
-            <FaLayerGroup className="text-accent" /> Parthiban.Dev
+            <FaLaptopCode className="text-white" /> Parthiban.
           </h1>
           <button
             onClick={toggleTheme}
             className={`p-2 rounded-md border hover:bg-opacity-10 ${isDark ? 'hover:bg-white/10 border-white' : 'hover:bg-black/10 border-black'}`}
           >
-            {isDark ? <FaSun size={20} /> : <FaMoon size={20} />}
+            {isDark ? <HiOutlineSun size={20} /> : <HiOutlineMoon size={20} />}
           </button>
         </header>
 
@@ -49,7 +52,7 @@ const OpeningPage = () => {
                 </span>
                 <br />
                 <span className={`bg-clip-text text-transparent bg-gradient-to-r ${isDark ? 'from-green-200 via-emerald-400 to-green-200' : 'from-green-800 via-green-900 to-green-800'}`}>
-                  Modern Web & MERN Stack Developer
+                  Full Stack Developer
                 </span>
               </h2>
 
@@ -66,7 +69,7 @@ const OpeningPage = () => {
                   className={`group flex items-center gap-2 px-4 sm:px-5 py-2 sm:py-2.5 rounded-md border hover:bg-opacity-10 transition transform active:scale-95 hover:-translate-y-1 ${isDark ? 'border-white/20 hover:bg-white/10' : 'border-black/20 hover:bg-black/10'}`}
                 >
                   <FaLayerGroup className="transition group-hover:-rotate-12" />
-                  Discover My Work
+                  Unfold My Journey
                 </NavLink>
               </div>
 
