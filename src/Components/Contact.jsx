@@ -16,7 +16,6 @@ const ContactPage = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Add real submit logic here
     setSubmitted(true);
   };
   
@@ -24,19 +23,19 @@ const ContactPage = () => {
     {
       Icon: FaEnvelope,
       label: "Email",
-      value: "parthiban@example.com",
-      href: "mailto:parthiban@example.com",
+      value: "parthibanm1268@gmail.com",
+      href: "parthibanm1268@gmail.com",
     },
     {
       Icon: FaPhone,
       label: "Phone",
-      value: "+1 234 567 890",
-      href: "tel:+1234567890",
+      value: "+91 8754131978",
+      href: "tel:+91 8754131978",
     },
     {
       Icon: FaMapMarkerAlt,
       label: "Location",
-      value: "Chennai, India",
+      value: "Coimbatore, India",
     },
   ];
 

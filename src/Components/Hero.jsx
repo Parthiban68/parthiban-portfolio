@@ -138,37 +138,34 @@ const Hero = () => {
         >
           <h2 className={`text-2xl sm:text-4xl md:text-6xl font-bold leading-tight ${isDark ? 'text-white' : 'text-black'}`}
           >
-            Passionate&nbsp;
-            <span className="text-[#00FF84]">Full‑Stack Developer</span><br className="hidden md:block" />
+            Innovative&nbsp;
+            <span className="text-[#00FF84]">Full-Stack Developer</span><br className="hidden md:block" />
             <span className={isDark ? 'text-gray-300 text-4xl sm:text-5xl' : 'text-gray-700 text-4xl sm:text-5xl'}>
-              Crafting Scalable Microservices
+              Building Scalable APIs & Platforms
             </span>
           </h2>
 
           <p className={`text-base sm:text-lg mt-4 max-w-2xl mx-auto ${isDark ? 'text-gray-400' : 'text-gray-800'}`}
           >
-            I'm Parthiban — a MERN Stack + Backend developer with a strong foundation in microservices, PostgreSQL,
-            and modern backend architecture. Currently working at XYZ as a backend engineer, building production-grade APIs and scalable systems.
+            Hi, I'm Parthiban — a Full Stack Developer with 8 months of experience in Node.js, Express, PostgreSQL,
+            and React.js. I specialize in crafting secure, scalable microservices and intuitive UIs, with proven
+            success in optimizing performance and delivering seamless user experiences.
           </p>
 
           <div className="flex flex-col sm:flex-row justify-center gap-6 mt-10 max-w-md mx-auto sm:max-w-none">
-            <NavLink
-              to="/projects"
-              className="bg-[#00FF84] text-black font-medium px-5 py-2 text-sm rounded shadow hover:bg-[#00e674] transition text-center"
-            >
+            <Link to="projects" smooth={true} duration={800} offset={-50} className="cursor-pointer bg-[#00FF84] text-black font-medium px-5 py-2 text-sm rounded shadow hover:bg-[#00e674] transition text-center">
               💻 VIEW PROJECTS
-            </NavLink>
-            <NavLink
-              to="/contact"
-              className={`${isDark
-                ? 'border border-white px-5 py-2 text-sm rounded hover:bg-white hover:text-black transition text-center'
-                : 'bg-white text-black font-medium px-5 py-2 text-sm rounded shadow hover:text-white transition border border-black hover:bg-black'
-                }`}
+            </Link>
+            <Link to="contactus" smooth={true} duration={800} offset={-50} className={`${isDark
+              ? 'border border-white px-5 py-2 text-sm rounded hover:bg-white hover:text-black transition text-center'
+              : 'bg-white text-black font-medium px-5 py-2 text-sm rounded shadow hover:text-white transition border border-black hover:bg-black'
+              } cursor-pointer`}
             >
               ✉️ CONTACT ME
-            </NavLink>
+            </Link>
           </div>
         </section>
+
 
         {/* Code Editor Mockup */}
         <section className="relative px-4 py-10 md:py-10">

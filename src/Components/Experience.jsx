@@ -5,21 +5,22 @@ import { useTheme } from '../Utils/ThemeContext'; // Adjust path as needed
 import { Element } from 'react-scroll';
 
 const experience = {
-  role: 'Backend Engineer',
-  company: 'XYZ Ltd.',
-  period: '2022 – Present',
+  role: 'Full Stack Developer',
+  company: 'Nubiznez Private Limited.',
+  period: 'JAN 2025 – Present',
   icon: FaBriefcase,
   color: '#22c55e',
   responsibilities: [
-    'Built RESTful APIs using Node.js, Express, and MongoDB.',
-    'Led migration from monolith to microservices, improving scalability.',
-    'Optimized database queries for high-performance data handling.',
-    'Automated deployment using CI/CD pipelines.',
-    'Collaborated with frontend teams to design seamless systems.',
-    'Mentored junior developers and reviewed code for best practices.',
+    'Developed and optimized full-stack applications with Node.js, Express, PostgreSQL, and React.js, improving overall system performance by 40%.',
+    'Built scalable RESTful APIs with RSA-based JWT authentication, secure middleware, and reusable utilities.',
+    'Integrated PDF ticketing and real-time notifications (WhatsApp, email, Firebase), enabling 70% faster delivery of customer updates.',
+    'Designed responsive UIs with React.js and Tailwind CSS, improving user experience and reducing page load times by 30%.',
+    'Implemented centralized logging (Winston) and security enhancements (Helmet, CORS) for production reliability.',
+    'Collaborated with cross-functional teams to align backend APIs with frontend interfaces, ensuring seamless end-to-end functionality.',
+    'Contributed to database design and optimized queries, reducing response latency by 25%.',
   ],
-  about: `As a Backend Engineer at XYZ Ltd., I focus on architecting and developing robust, scalable backend solutions for fast-growing web applications. I drive improvements in system performance, security, and developer experience while collaborating with cross-functional teams to achieve business goals.`,
-};
+  about: `As a Full Stack Developer at Nubiznez Private Limited, I specialize in building scalable and secure applications by combining strong backend engineering with intuitive frontend design. I focus on creating high-performance APIs, secure authentication, and real-time integrations while also delivering responsive, user-friendly interfaces using React.js and Tailwind CSS. My work emphasizes performance, security, and developer-friendly practices to deliver production-grade solutions.`,
+}  
 
 const cardVariants = {
   hidden: { opacity: 0, y: 60, scale: 0.95 },
