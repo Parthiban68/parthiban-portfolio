@@ -22,7 +22,7 @@ const OpeningPage = () => {
         {/* ---------- NAV ---------- */}
         <header className={`flex items-center justify-between px-4 sm:px-6 lg:px-32 py-3 border-b ${isDark ? 'border-white/10' : 'border-black/10'}`}>
           <h1 className="flex items-center gap-2 font-semibold text-base sm:text-lg">
-            <FaLaptopCode className="text-white" /> Parthiban.
+            <FaLaptopCode className={`${isDark ? 'text-white' : 'text-black'}`} /> Parthiban.
           </h1>
           <button
             onClick={toggleTheme}
