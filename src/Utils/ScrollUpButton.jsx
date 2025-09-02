@@ -8,7 +8,7 @@ export const ScrollUpButton = () => {
   const isDark = theme === 'dark';
 
   const toggleVisibility = () => {
-    setIsVisible(window.pageYOffset > 800);
+    setIsVisible(window.pageYOffset > 500);
   };
 
   const scrollToTop = () => {

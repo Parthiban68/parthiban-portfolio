@@ -54,7 +54,7 @@ const ExperienceSingleCard = () => {
           ${isDark ? 'text-white' : 'text-black'}
         `}
       >
-       Work Experience
+       Work Experience 
       </motion.h1>
 
       {/* Experience Card */}
@@ -68,7 +68,7 @@ const ExperienceSingleCard = () => {
           shadow-2xl 
           border 
           mx-auto 
-          max-w-2xl 
+          max-w-5xl 
           w-full
           ${isDark
             ? 'bg-gradient-to-br from-gray-900 via-gray-800 to-black border-gray-800'
