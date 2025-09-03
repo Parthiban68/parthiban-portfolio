@@ -100,7 +100,7 @@ const PersonalProjects = () => {
     const isDark = theme === 'dark';
 
     return (
-        <section className={` ${isDark ? "bg-black" : "bg-white"}`}>
+        <section className={` ${isDark ? "bg-black" : "bg-white"} min-h-screen py-5`}>
             <div className="max-w-7xl py-12 px-2 sm:px-4 md:px-8 lg:px-16 mx-auto mb-20 text-center">
                 <motion.h2
                     className={`text-4xl sm:text-5xl font-extrabold mb-6 ${isDark ? 'text-white' : 'text-black'}`}
@@ -108,10 +108,12 @@ const PersonalProjects = () => {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8 }}
                 >
-                    Personal Projects
+                    PERSONAL PROJECTS
                 </motion.h2>
                 <p className={`text-base sm:text-lg max-w-3xl mx-auto mb-8 ${isDark ? 'text-gray-400' : 'text-gray-700'}`}>
-                "Where experimentation meets innovation—ideas brought to life through code."
+                    Where experimentation meets innovation—ideas brought to life through code.
+                    A space to explore new technologies, frameworks, and creative problem-solving.
+                    These projects reflect curiosity, continuous learning, and a passion for building beyond boundaries."
                 </p>
                 <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-8 ">
                     {projects.map((project) => (

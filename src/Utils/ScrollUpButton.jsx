@@ -32,7 +32,7 @@ export const ScrollUpButton = () => {
             bg-white/30  backdrop-blur-md rounded-full shadow-md
             hover:bg-black/50  transition-colors duration-300 cursor-pointer z-50 font-semibold select-none
             focus:outline-none focus:ring-2 focus:ring-white
-            ${isDark ? 'text-black bg-white/100 hover:bg-white/200 hover:text-white border hover:border-gray-300' : 'text-white bg-black/100 '}
+            ${isDark ? 'text-white/200 bg-white hover:bg-white/200 hover:text-white border hover:border-gray-300' : 'text-white bg-black/100 '}
           `}
         >
           <FaChevronUp size={20} />

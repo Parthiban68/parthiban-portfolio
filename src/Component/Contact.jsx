@@ -42,7 +42,7 @@ const ContactPage = () => {
   return (
     <Element name="contactus">
     <section
-      className={`relative min-h-screen overflow-hidden px-6 py-20 transition-colors duration-700
+      className={`relative min-h-screen -mt-36 overflow-hidden px-6 py-20 transition-colors duration-700
       ${isDark ? "bg-black text-white" : "bg-white text-black"}`}
     >
       {/* Background shapes */}
@@ -96,7 +96,7 @@ const ContactPage = () => {
       </h2>
       <p
         className={`text-lg max-w-md ${
-          isDark ? "text-gray-300" : "text-gray-300"
+          isDark ? "text-gray-300" : "text-gray-700"
         }`}
       >
         Feel free to contact me about any projects, questions, or collaboration
@@ -110,23 +110,23 @@ const ContactPage = () => {
             className="flex items-center gap-5 cursor-default group transform transition"
           >
             <Icon
-              className={`text-green-400 w-8 h-8 flex-shrink-0 transition-transform duration-300 group-hover:scale-110 ${
-                isDark ? "drop-shadow-[0_0_3px_rgba(34,197,94,0.8)]" : ""
+              className={` w-8 h-8 flex-shrink-0 transition-transform duration-300 group-hover:scale-110 ${
+                isDark ? " text-white" : " text-black"
               }`}
             />
             {href ? (
               <a
                 href={href}
-                className={`hover:text-green-500 transition-colors duration-300 font-semibold ${
-                  isDark ? "text-gray-300" : "text-green-700"
+                className={`hover:text-green-500 transition-colors duration-300 font-semibold text-base md:text-lg ${
+                  isDark ? "text-gray-300" : "text-black"
                 }`}
               >
                 {value}
               </a>
             ) : (
               <span
-                className={`select-none font-semibold ${
-                  isDark ? "text-gray-300" : "text-green-700"
+                className={`select-none font-semibold text-base md:text-lg ${
+                  isDark ? "text-gray-300" : "text-black"
                 }`}
               >
                 {value}
@@ -167,7 +167,7 @@ const ContactPage = () => {
                     placeholder=" "
                     value={formData[field]}
                     onChange={handleChange}
-                    className={`block py-4 px-3 w-full text-lg bg-transparent border-2 rounded-xl appearance-none
+                    className={`block py-4 px-3 w-full text-base md:text-lg bg-transparent border-2 rounded-xl appearance-none
                       peer focus:outline-none focus:ring-2 focus:ring-gray-400 focus:border-transparent
                       ${
                         isDark
@@ -177,7 +177,7 @@ const ContactPage = () => {
                   />
                   <label
                     htmlFor={field}
-                    className={`absolute text-xl ${isDark ? "text-white" : "text-green-700"} duration-300 transform -translate-y-7 scale-75 top-3 left-4 origin-[0] peer-placeholder-shown:translate-y-3 peer-placeholder-shown:scale-100 peer-focus:-translate-y-7 peer-focus:scale-75 pointer-events-none select-none`}
+                    className={`absolute ${isDark ? "text-white" : "text-green-700"} duration-300 text-base md:text-lg transform -translate-y-7 scale-75 top-3 left-4 origin-[0] peer-placeholder-shown:translate-y-3 peer-placeholder-shown:scale-100 peer-focus:-translate-y-7 peer-focus:scale-75 pointer-events-none select-none`}
                   >
                     {field.charAt(0).toUpperCase() + field.slice(1)}
                   </label>

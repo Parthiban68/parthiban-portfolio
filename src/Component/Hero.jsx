@@ -169,19 +169,19 @@ const Hero = () => {
       </nav>
 
       {/* Hero Section */}
-      <div className='min-h-screen mt-6 sm:mt-20' >
+      <div className='min-h-screen mt-10 sm:mt-20' >
         <section style={{ fontFamily :'monospace' }} className={`text-center font-mono py-20 px-5 sm:px-10 bg-heroGlow bg-no-repeat ${isDark ? '' : 'bg-heroGlow-light'}`}
         >
-          <h2 className={`text-2xl sm:text-4xl md:text-6xl font-bold leading-tight ${isDark ? 'text-white' : 'text-black'}`}
+          <h2 className={`text-3xl sm:text-4xl md:text-6xl font-bold leading-tight ${isDark ? 'text-white' : 'text-black'}`}
           >
-            Innovative&nbsp;
-            <span className="text-[#00FF84]">Full-Stack Developer</span><br className="hidden md:block" />
-            <span className={isDark ? 'text-gray-300 text-4xl sm:text-5xl' : 'text-gray-700 text-4xl sm:text-5xl'}>
+            Innovative&nbsp;<br className="md:hidden"/>
+            <span className="text-[#00FF84]">Full-Stack Developer</span><br className="md:block" />
+            <span className={isDark ? 'text-gray-300 text-2xl sm:text-5xl' : 'text-gray-700 text-4xl sm:text-5xl'}>
               Building Scalable APIs & Platforms
             </span>
           </h2>
 
-          <p className={`text-base sm:text-lg mt-4 max-w-2xl mx-auto ${isDark ? 'text-gray-400' : 'text-gray-800'}`}
+          <p className={`text-lg sm:text-lg mt-4 max-w-2xl mx-auto ${isDark ? 'text-gray-300' : 'text-gray-800'}`}
           >
             Hi, I'm Parthiban — a Full Stack Developer with 8 months of experience in Node.js, Express, PostgreSQL,
             and React.js. I specialize in crafting secure, scalable microservices and intuitive UIs, with proven
