@@ -5,7 +5,7 @@ import { HiOutlineSun } from "react-icons/hi";
 import { HiOutlineMoon } from "react-icons/hi";
 import avatar from "../assets/avatar.png";
 import { NavLink } from "react-router-dom";
-import PageTransition from "../Components/PageTransition";
+import PageTransition from "../Component/PageTransition";
 import { useTheme } from '../Utils/ThemeContext';
 
 

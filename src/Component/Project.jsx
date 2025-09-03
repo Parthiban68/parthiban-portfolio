@@ -449,10 +449,10 @@ const ProjectsPage = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            Projects
+            Professional Projects
           </motion.h2>
           <p className={`text-base sm:text-lg max-w-3xl mx-auto mb-8 ${isDark ? 'text-gray-400' : 'text-gray-700'}`}>
-            Some of my recent projects showcasing skills and creativity.
+          "Projects that showcase my ability to deliver results in a professional environment."
           </p>
         </div>
         {/* Timeline/Vertical Grid */}

@@ -28,11 +28,11 @@ export const ScrollUpButton = () => {
           aria-label="Scroll to top"
           title="Click to go up"
           className={`
-            hidden md:flex fixed bottom-8 left-1/2 transform -translate-x-1/2 flex items-center gap-2 px-4 py-2 text-[20px]
+             hidden md:flex fixed bottom-8 left-1/2 transform -translate-x-1/2 flex items-center gap-2 px-4 py-2 text-[16px]
             bg-white/30  backdrop-blur-md rounded-full shadow-md
             hover:bg-black/50  transition-colors duration-300 cursor-pointer z-50 font-semibold select-none
-            focus:outline-none focus:ring-2 focus:ring-green-400
-            ${isDark ? 'text-black dark:bg-white/100 dark:hover:bg-white/50' : 'text-white dark:bg-black/100 '}
+            focus:outline-none focus:ring-2 focus:ring-white
+            ${isDark ? 'text-black bg-white/100 hover:bg-white/200 hover:text-white border hover:border-gray-300' : 'text-white bg-black/100 '}
           `}
         >
           <FaChevronUp size={20} />

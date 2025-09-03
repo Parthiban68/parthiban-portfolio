@@ -10,6 +10,17 @@ import { FaReact, FaDatabase } from 'react-icons/fa';
 import { FaLaptopCode, FaMobileAlt } from 'react-icons/fa';
 import MeImg from "../assets/avatar.png";
 import { motion } from 'framer-motion';
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+  AlertDialogTrigger,
+} from "../components/ui/alert-dialog"
 
 const Hero = () => {
   const { theme, toggleTheme } = useTheme();
@@ -54,17 +65,17 @@ const Hero = () => {
   return (
     <div className={`  ${isDark ? 'bg-black text-white' : 'bg-white text-black'}`}>
       {/* Navbar */}
-      <nav className={` font-mono fixed w-full z-20 top-0 ${isDark ? '' : 'bg-white'}`}>
+      <nav className={`fixed w-full z-20 top-0 ${isDark ? '' : 'bg-white'}`}>
         <div className={`flex justify-between items-center px-6 sm:px-10 py-[1.55rem] sm:max-w-[80vw] mx-auto ${isDark ? 'bg-gradient-to-br from-black via-gray-800 to-black' : 'bg-gray-200'} rounded-b-md`}
         >
           <NavLink to="/">
-            <h1 className={`font-semibold text-lg sm:text-xl ${isDark ? 'text-white' : 'text-black'}`}>
-              <span className="text-[#00FF84]">Parthiban</span>.DEV
+            <h1 className={`font-semibold text-lg sm:text-xl font-mono ${isDark ? 'text-white' : 'text-black'}`}>
+              <span className="text-[#00FF84]">Parthiban</span>.Dev
             </h1>
           </NavLink>
 
           {/* Desktop Nav Links */}
-          <ul className={`hidden md:flex space-x-8 text-sm sm:text-base ${isDark ? 'text-white' : 'text-black'}`}>
+          <ul className={`hidden md:flex space-x-8 text-sm sm:text-base font-mono ${isDark ? 'text-white' : 'text-black'}`}>
             <Link to="about" smooth={true} duration={800} offset={-50} className="cursor-pointer">
               ABOUT ME
             </Link>
@@ -81,9 +92,22 @@ const Hero = () => {
               CONTACT US
             </Link>
             <div>
-              <button onClick={downloadResume} className="btn-primary">
-                RESUME
-              </button>
+              <AlertDialog>
+                <AlertDialogTrigger className="btn-primary">RESUME</AlertDialogTrigger>
+                <AlertDialogContent className='bg-gradient-to-br from-black via-gray-800 to-black'>
+                  <AlertDialogHeader>
+                    <AlertDialogTitle className='text-xl font-bold'> Download Resume</AlertDialogTitle>
+                    <AlertDialogDescription className='text-white/80 text-md'>
+                      You are about to download <span className="text-white font-semibold">Parthiban Resume.pdf</span>.
+                      This file will be saved to your device for offline access.
+                    </AlertDialogDescription>
+                  </AlertDialogHeader>
+                  <AlertDialogFooter>
+                    <AlertDialogCancel className='bg-gray-950 hover:bg-white'>Cancel</AlertDialogCancel>
+                    <AlertDialogAction className='text-white bg-black hover:text-black hover:bg-white border border-gray-200' onClick={() => downloadResume()}>Download</AlertDialogAction>
+                  </AlertDialogFooter>
+                </AlertDialogContent>
+              </AlertDialog>
             </div>
           </ul>
 
@@ -115,9 +139,9 @@ const Hero = () => {
         {menuOpen && (
           <div className={`${isDark ? 'bg-[#0f0f0f]' : 'bg-gray-100'} md:hidden px-6 py-4 max-w-[90vw] mx-auto rounded-b-md shadow-lg font-mono`}>
             <ul className={`flex flex-col space-y-4 text-base ${isDark ? 'text-white' : 'text-black'}`}>
-            <Link to="about" smooth={true} duration={800} offset={-50} className="cursor-pointer" onClick={() => setMenuOpen(false)}>
-              ABOUT ME
-            </Link>
+              <Link to="about" smooth={true} duration={800} offset={-50} className="cursor-pointer" onClick={() => setMenuOpen(false)}>
+                ABOUT ME
+              </Link>
               <Link to="tech" smooth={true} duration={800} offset={-50} className="cursor-pointer" onClick={() => setMenuOpen(false)}>
                 TECH STACK
               </Link>
@@ -145,8 +169,8 @@ const Hero = () => {
       </nav>
 
       {/* Hero Section */}
-      <div className='min-h-screen mt-6 sm:mt-48'>
-        <section className={`text-center font-mono py-20 px-5 sm:px-10 bg-heroGlow bg-no-repeat ${isDark ? '' : 'bg-heroGlow-light'}`}
+      <div className='min-h-screen mt-6 sm:mt-20' >
+        <section style={{ fontFamily :'monospace' }} className={`text-center font-mono py-20 px-5 sm:px-10 bg-heroGlow bg-no-repeat ${isDark ? '' : 'bg-heroGlow-light'}`}
         >
           <h2 className={`text-2xl sm:text-4xl md:text-6xl font-bold leading-tight ${isDark ? 'text-white' : 'text-black'}`}
           >
@@ -312,7 +336,7 @@ const AboutMe = () => {
           {/* Skill Badges */}
           <ul className="flex flex-wrap gap-4 justify-start mt-2">
             {skills.map(({ name, icon: Icon, color }) => (
-              <li key={name} className="flex items-center gap-2 bg-gray-200 dark:bg-gray-800 px-3 py-1 rounded-lg shadow text-sm font-medium">
+              <li key={name} className={`flex items-center gap-2 ${isDark ? 'bg-gray-800' : 'bg-gray-200'} px-3 py-1 rounded-lg shadow text-sm font-medium`}>
                 <Icon size={20} style={{ color }} aria-hidden="true" /> <span>{name}</span>
               </li>
             ))}

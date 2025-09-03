@@ -1,12 +1,13 @@
 
 import React, { useState, useEffect } from 'react';
 import { FaArrowUp } from 'react-icons/fa';
-import Hero from '../Components/Hero'
-import TechStack from '../Components/TeckStack'
-import ExperiencePage from '../Components/Experience'
-import ProjectPage from '../Components/Project'
-import ContactPage from '../Components/Contact'
+import Hero from '../Component/Hero'
+import TechStack from '../Component/TeckStack'
+import ExperiencePage from '../Component/Experience'
+import ProjectPage from '../Component/Project'
+import ContactPage from '../Component/Contact'
 import { ScrollUpButton } from '../Utils/ScrollUpButton';
+import PersonalProjects from '../Component/PersonalProjects';
 const HomePage = () => {
  
   return (
@@ -15,6 +16,7 @@ const HomePage = () => {
     <TechStack/>
     <ExperiencePage/>
     <ProjectPage/>
+    <PersonalProjects/>
     <ContactPage/>
     <ScrollUpButton/>
     </>

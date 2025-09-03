@@ -89,14 +89,14 @@ const ContactPage = () => {
     >
       <h2
         className={`text-4xl font-extrabold  ${
-          isDark ? "text-green-400" : "text-green-700"
+          isDark ? "text-white" : "text-green-700"
         }`}
       >
         Get in Touch
       </h2>
       <p
         className={`text-lg max-w-md ${
-          isDark ? "text-gray-300" : "text-green-700"
+          isDark ? "text-gray-300" : "text-gray-300"
         }`}
       >
         Feel free to contact me about any projects, questions, or collaboration
@@ -118,7 +118,7 @@ const ContactPage = () => {
               <a
                 href={href}
                 className={`hover:text-green-500 transition-colors duration-300 font-semibold ${
-                  isDark ? "text-green-300" : "text-green-700"
+                  isDark ? "text-gray-300" : "text-green-700"
                 }`}
               >
                 {value}
@@ -126,7 +126,7 @@ const ContactPage = () => {
             ) : (
               <span
                 className={`select-none font-semibold ${
-                  isDark ? "text-gray-400" : "text-green-700"
+                  isDark ? "text-gray-300" : "text-green-700"
                 }`}
               >
                 {value}
@@ -168,16 +168,16 @@ const ContactPage = () => {
                     value={formData[field]}
                     onChange={handleChange}
                     className={`block py-4 px-3 w-full text-lg bg-transparent border-2 rounded-xl appearance-none
-                      peer focus:outline-none focus:ring-2 focus:ring-green-400 focus:border-transparent
+                      peer focus:outline-none focus:ring-2 focus:ring-gray-400 focus:border-transparent
                       ${
                         isDark
-                          ? "border-green-700 text-white placeholder-transparent"
+                          ? "border-gray-500 text-white placeholder-transparent"
                           : "border-green-300 text-black placeholder-transparent"
                       }`}
                   />
                   <label
                     htmlFor={field}
-                    className={`absolute text-xl text-green-400 duration-300 transform -translate-y-7 scale-75 top-3 left-4 origin-[0] peer-placeholder-shown:translate-y-3 peer-placeholder-shown:scale-100 peer-focus:-translate-y-7 peer-focus:scale-75 pointer-events-none select-none`}
+                    className={`absolute text-xl ${isDark ? "text-white" : "text-green-700"} duration-300 transform -translate-y-7 scale-75 top-3 left-4 origin-[0] peer-placeholder-shown:translate-y-3 peer-placeholder-shown:scale-100 peer-focus:-translate-y-7 peer-focus:scale-75 pointer-events-none select-none`}
                   >
                     {field.charAt(0).toUpperCase() + field.slice(1)}
                   </label>
@@ -187,10 +187,10 @@ const ContactPage = () => {
                       rows={5}
                       placeholder=" "
                       className={`block mt-4 w-full rounded-xl border-2 bg-transparent px-3 py-3 text-lg resize-none
-                        peer focus:outline-none focus:ring-2 focus:ring-green-400 focus:border-transparent
+                        peer focus:outline-none focus:ring-2 focus:ring-gray-400 focus:border-transparent
                         ${
                           isDark
-                            ? "border-green-700 text-white placeholder-transparent"
+                            ? "border-gray-500 text-white placeholder-transparent"
                             : "border-green-300 text-black placeholder-transparent"
                         }`}
                       value={formData.message}
@@ -203,7 +203,9 @@ const ContactPage = () => {
 
               <button
                 type="submit"
-                className="mt-10 rounded-full bg-gradient-to-r from-green-400 via-lime-400 to-teal-400 px-12 py-4 text-black font-semibold hover:brightness-110 active:scale-95 transition-transform duration-300 self-start"
+                className={`mt-10 rounded-xl px-6 py-2 text-black font-semibold hover:brightness-110
+                  ${isDark ? "bg-white text-black hover:bg-black hover:text-white" : "bg-green-300 text-white"}
+                  active:scale-95 transition-transform duration-300 self-start`}
               >
                 Send
               </button>
