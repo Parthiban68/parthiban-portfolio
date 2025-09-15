@@ -170,11 +170,11 @@ const Hero = () => {
 
       {/* Hero Section */}
       <div className='min-h-screen mt-10 sm:mt-20' >
-        <section style={{ fontFamily :'monospace' }} className={`text-center font-mono py-20 px-5 sm:px-10 bg-heroGlow bg-no-repeat ${isDark ? '' : 'bg-heroGlow-light'}`}
+        <section style={{ fontFamily: 'monospace' }} className={`text-center font-mono py-20 px-5 sm:px-10 bg-heroGlow bg-no-repeat ${isDark ? '' : 'bg-heroGlow-light'}`}
         >
           <h2 className={`text-3xl sm:text-4xl md:text-6xl font-bold leading-tight ${isDark ? 'text-white' : 'text-black'}`}
           >
-            Innovative&nbsp;<br className="md:hidden"/>
+            Innovative&nbsp;<br className="md:hidden" />
             <span className="text-[#00FF84]">Full-Stack Developer</span><br className="md:block" />
             <span className={isDark ? 'text-gray-300 text-2xl sm:text-5xl' : 'text-gray-700 text-4xl sm:text-5xl'}>
               Building Scalable APIs & Platforms
@@ -327,11 +327,15 @@ const AboutMe = () => {
         <div className="flex flex-col items-start w-full text-left">
           {/* <h2 className={`font-bold text-3xl sm:text-4xl mb-2 ${isDark ? 'text-white' : 'text-black'}`}>About Me</h2> */}
           <p className={`text-base sm:text-lg max-w-3xl ${isDark ? 'text-gray-300' : 'text-gray-700'} mb-5 leading-relaxed`}>
-            Hi! I’m Parthiban, a <b>passionate full-stack developer</b> with comprehensive experience in crafting scalable and efficient web applications.
+            Hi! I’m Parthiban, a passionate Full-Stack Developer with professional experience in building scalable, secure, and production-grade applications. I specialize in crafting performant APIs, responsive frontends, and real-time integrations that deliver seamless digital experiences.
+
             <br /><br />
-            I specialize in building performant APIs, intuitive frontends, and seamless mobile experiences. Beyond coding, I value collaboration, continuous learning, and creative problem-solving.
+
+            At Nubiznez Private Limited, I contributed to TBS_WEB and TBS_CRM, where I improved overall system performance by 40% through backend optimizations, reduced database latency by 25% with efficient query design, and enabled 70% faster customer updates by integrating PDF ticketing with real-time notifications via WhatsApp, email, and Firebase. I also enhanced user experience and cut page load times by 30% with modern frontend development using React.js and Tailwind CSS.
+
             <br /><br />
-            My mission is to develop high-quality software that helps users thrive, and to grow as a developer by embracing new technologies and challenges.
+
+            Beyond coding, I value collaboration, continuous learning, and creative problem-solving. My mission is to deliver high-quality software that empowers users while continuously growing as a developer by embracing new technologies and tackling challenging projects.
           </p>
           {/* Skill Badges */}
           <ul className="flex flex-wrap gap-4 justify-start mt-2">

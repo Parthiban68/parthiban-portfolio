@@ -1,52 +1,55 @@
 import React from "react";
 import { FaReact, FaNodeJs, FaGithub } from "react-icons/fa";
 import { SiTailwindcss, SiExpress, SiMongodb } from "react-icons/si";
+import { TbBrandRedux } from "react-icons/tb";
 import { useTheme } from '../Utils/ThemeContext';
-import TBS_WEB from "../assets/TBS_WEB.png"
+import cinestream from "../assets/cinestream.png"
+import treadtrends from "../assets/treadtrends.png"
+import task from "../assets/task.png"
 import { motion } from 'framer-motion';
 
 const projects = [
     {
         id: 1,
-        title: "Real-Time Chat App",
-        image: TBS_WEB,
-        description: "A real-time chat platform supporting private and group messaging, built for scalable and secure interactions.",
+        title: "CineStream",
+        image: cinestream,
+        description: "CineStream is an online movie streaming platform built with React.js and Tailwind CSS, integrating the TMDb API for fetching real-time movie data. The application features a clean and responsive UI, allowing users to explore trending, upcoming, and popular movies seamlessly.",
         tech: [
             { name: "React", icon: FaReact, color: "#61DAFB" },
-            { name: "Node.js", icon: FaNodeJs, color: "#6cc24a" },
-            { name: "Express", icon: SiExpress, color: "#D3D3D3" },
-            { name: "MongoDB", icon: SiMongodb, color: "#10aa50" },
             { name: "Tailwind CSS", icon: SiTailwindcss, color: "#38BDF8" },
+            { name: "Redux", icon: TbBrandRedux, color: "#764abc" },
+            // { name: "Express", icon: SiExpress, color: "#D3D3D3" },
+            // { name: "MongoDB", icon: SiMongodb, color: "#10aa50" },
         ],
-        github: "https://github.com/youruser/chat-app",
+        github: "https://github.com/Parthiban68/CineStreams",
     },
     {
         id: 2,
-        title: "Real-Time Chat App",
-        image: TBS_WEB,
-        description: "A real-time chat platform supporting private and group messaging, built for scalable and secure interactions.",
+        title: "TreadTrends",
+        image: treadtrends,
+        description: "TreadTrends is a footwear e-commerce platform built with the MERN stack, offering users a seamless shopping experience with modern design and functionality.",
         tech: [
             { name: "React", icon: FaReact, color: "#61DAFB" },
+            { name: "Tailwind CSS", icon: SiTailwindcss, color: "#38BDF8" },
             { name: "Node.js", icon: FaNodeJs, color: "#6cc24a" },
             { name: "Express", icon: SiExpress, color: "D3D3D3" },
             { name: "MongoDB", icon: SiMongodb, color: "#10aa50" },
-            { name: "Tailwind CSS", icon: SiTailwindcss, color: "#38BDF8" },
         ],
-        github: "https://github.com/youruser/chat-app",
+        github: "https://github.com/Parthiban68/Shopping-project",
     },
     {
         id: 3,
-        title: "Real-Time Chat App",
-        image: TBS_WEB,
-        description: "A real-time chat platform supporting private and group messaging, built for scalable and secure interactions.",
+        title: "Task Manager",
+        image: task,
+        description: "Task Manager is a productivity web app built with the MERN stack, enabling users to efficiently create, organize, and track tasks with a simple and responsive interface.",
         tech: [
             { name: "React", icon: FaReact, color: "#61DAFB" },
+            { name: "Tailwind CSS", icon: SiTailwindcss, color: "#38BDF8" },
             { name: "Node.js", icon: FaNodeJs, color: "#6cc24a" },
             { name: "Express", icon: SiExpress, color: "#D3D3D3" },
             { name: "MongoDB", icon: SiMongodb, color: "#10aa50" },
-            { name: "Tailwind CSS", icon: SiTailwindcss, color: "#38BDF8" },
         ],
-        github: "https://github.com/youruser/chat-app",
+        github: "https://github.com/Parthiban68/TaskManagement-MERN",
     },
 ];
 
