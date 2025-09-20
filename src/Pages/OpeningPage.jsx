@@ -7,7 +7,7 @@ import avatar from "../assets/avatar.png";
 import { NavLink } from "react-router-dom";
 import PageTransition from "../Component/PageTransition";
 import { useTheme } from '../Utils/ThemeContext';
-
+import TextType from '../Component/TextType';
 
 const OpeningPage = () => {
   const { theme, toggleTheme } = useTheme();
@@ -15,7 +15,7 @@ const OpeningPage = () => {
 
   return (
     <PageTransition>
-      <div className={`min-h-screen w-full flex flex-col font-sans bg-no-repeat ${isDark ? 'bg-black text-white bg-heroGlow' : 'bg-white text-black'}`}>
+      <div className={`min-h-screen w-full flex flex-col font-sans bg-no-repeat ${isDark ? 'bg-black text-white ' : 'bg-white text-black'}`}>
         {/* grid overlay */}
         <div className={`pointer-events-none fixed inset-0 -z-10 bg-grid ${isDark ? 'bg-[length:32px_32px]' : 'bg-[length:40px_40px]'} md:bg-[length:40px_40px]`} />
 
@@ -52,7 +52,17 @@ const OpeningPage = () => {
                 </span>
                 <br />
                 <span className={`bg-clip-text text-transparent bg-gradient-to-r ${isDark ? 'from-green-200 via-emerald-400 to-green-200' : 'from-green-800 via-green-900 to-green-800'}`}>
-                  Full Stack Developer
+                  <TextType
+                    text={["Full Stack Developer", "Front-End Developer", "Back-End Developer", "Mobile Developer"]}
+                    typingSpeed={135}
+                    pauseDuration={1500}
+                    showCursor={true}
+                    cursorCharacter="_"
+                    // hideCursorWhileTyping = {true}
+                    cursorBlinkDuration={0.6}
+                    className='sm:text-5xl text-2xl'
+                  />
+
                 </span>
               </h2>
 
@@ -81,9 +91,9 @@ const OpeningPage = () => {
                 <a href="https://linkedin.com/in/m-parthiban" target="_blank" rel="noreferrer" className={`hover:${isDark ? 'text-white' : 'text-black'}`}>
                   <FaLinkedin />
                 </a>
-                <a href="https://twitter.com/" target="_blank" rel="noreferrer" className={`hover:${isDark ? 'text-white' : 'text-black'}`}>
+                {/* <a href="https://twitter.com/" target="_blank" rel="noreferrer" className={`hover:${isDark ? 'text-white' : 'text-black'}`}>
                   <FaXTwitter />
-                </a>
+                </a> */}
               </div>
             </div>
           </div>
