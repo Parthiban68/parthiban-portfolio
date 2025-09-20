@@ -51,7 +51,7 @@ const OpeningPage = () => {
                   Parthiban
                 </span>
                 <br />
-                <span className={`bg-clip-text text-transparent bg-gradient-to-r ${isDark ? 'from-green-200 via-emerald-400 to-green-200' : 'from-green-800 via-green-900 to-green-800'}`}>
+                <span className={`bg-clip-text text-transparent bg-gradient-to-r ${isDark ? 'bg-white' : 'bg-black'}`}>
                   <TextType
                     text={["Full Stack Developer", "Front-End Developer", "Back-End Developer", "Mobile Developer"]}
                     typingSpeed={135}
@@ -59,8 +59,9 @@ const OpeningPage = () => {
                     showCursor={true}
                     cursorCharacter="_"
                     // hideCursorWhileTyping = {true}
+                    textColors={[`${isDark ? 'text-white' : 'text-black'}`]}
                     cursorBlinkDuration={0.6}
-                    className='sm:text-5xl text-2xl'
+                    className="sm:text-5xl text-2xl"
                   />
 
                 </span>
