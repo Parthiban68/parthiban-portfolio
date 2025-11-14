@@ -7,7 +7,7 @@ import SplashCursor from './Component/SplashCursor.jsx'
 
 createRoot(document.getElementById('root')).render(
   <BrowserRouter>
-    <SplashCursor />
+    {/* <SplashCursor /> */}
     <App />
   </BrowserRouter>
 )
