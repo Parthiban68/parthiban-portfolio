@@ -1,70 +1,157 @@
+# name: Production CI/CD Pipeline
+
+# on:
+#   push:
+#     branches:
+#     - main
+
+#   pull_request:
+
+# jobs:
+#   # 1. CI JOB
+#   ci:
+#     runs-on: ubuntu-latest
+
+#     steps:
+#       - name: checkout
+#         uses: actions/checkout@v4
+
+#       - name: Setup node
+#         uses: actions/setup-node@v4
+#         with:
+#           node-version: 20
+
+#       - name: Cache dependencies
+#         uses: actions/cache@v3
+#         with:
+#           path: ~/.npm
+#           key: npm-${{ hasFiles('package-lock.json') }}
+
+#       - name: Install dependencies
+#         run: npm ci
+
+#       - name: Lint
+#         run: npm run lint
+
+#       - name: Build project
+#         run: npm run build
+
+#   # 2. DEPLOY JOB
+#   deploy:
+#     needs: ci
+#     runs-on: ubuntu-latest
+
+#     if: github.ref == 'refs/heads/main'
+
+#     steps:
+#       - name: Checkout
+#         uses: actions/checkout@v4
+
+#       - name: Install Vercel CLI
+#         run: npm install -g vercel
+
+#       - name: Pull Vercel Enviroment
+#         run: |
+#           if [ "${{ github.ref }}" == "refs/heads/main" ]; then
+#             vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}
+#           else
+#             vercel pull --yes --environment=preview --token=${{ secrets.VERCEL_TOKEN }}
+#           fi
+
+#       - name: Build (Vercel optimized)
+#         run: vercel build --token=${{ secrets.VERCEL_TOKEN }}
+
+#       - name: Deploy
+#         run: |
+#           if [ "${{ github.ref }}" == "refs/heads/main" ]; then
+#             vercel deploy --prebuilt --prod --token=${{ secrets.VERCEL_TOKEN }}
+#           else
+#             vercel deploy --prebuilt --token=${{ secrets.VERCEL_TOKEN }}
+#           fi
+#         env:
+#           VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+#           VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+
 name: Production CI/CD Pipeline
 
 on:
-  push: branches:["main"]
-  pull_request:
+  push:
+    branches:
+      - main
 
 jobs:
-  # 1. CI JOB
   ci:
-    runs_on: ubuntu-latest
+    name: Continuous Integration
+    runs-on: ubuntu-latest
 
     steps:
-      - name: checkout
+      - name: Checkout Repository
         uses: actions/checkout@v4
 
-      - name: Setup node
+      - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 20
+          cache: npm
 
-      - name: Cache dependencies
-        uses: actions/cache@v3
-        with:
-          path: ~/.npm
-          key: npm-${{ hasFiles('package-lock.json') }}
-
-      - name: Install dependencies
+      - name: Install Dependencies
         run: npm ci
 
-      - name: Lint
+      - name: Run Lint
         run: npm run lint
 
-      - name: Build project
+      # Uncomment this if your project has tests
+      # - name: Run Tests
+      #   run: npm test
+
+      - name: Build Project
         run: npm run build
 
-  # 2. DEPLOY JOB
   deploy:
-    need: ci
-    runs-on: ubuntu-latest
+    name: Deploy to Vercel Production
+    needs: ci
 
     if: github.ref == 'refs/heads/main'
 
+    runs-on: ubuntu-latest
+
+    environment: production
+
     steps:
-      - name: Checkout
+      - name: Checkout Repository
         uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install Dependencies
+        run: npm ci
 
       - name: Install Vercel CLI
         run: npm install -g vercel
 
-      - name: Pull Vercel Enviroment
+      - name: Pull Vercel Environment
         run: |
-          if [ "${{ github.ref }}" == "refs/heads/main" ]; then
-            vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}
-          else
-            vercel pull --yes --environment=preview --token=${{ secrets.VERCEL_TOKEN }}
-          fi
+          vercel pull \
+          --yes \
+          --environment=production \
+          --token=${{ secrets.VERCEL_TOKEN }}
 
-      - name: Build (Vercel optimized)
-        run: vercel build --token=${{ secrets.VERCEL_TOKEN }}
-
-      - name: Deploy
+      - name: Build with Vercel
         run: |
-          if [ "${{ github.ref }}" == "refs/heads/main" ]; then
-            vercel deploy --prebuilt --prod --token=${{ secrets.VERCEL_TOKEN }}
-          else
-            vercel deploy --prebuilt --token=${{ secrets.VERCEL_TOKEN }}
-          fi
+          vercel build \
+          --prod \
+          --token=${{ secrets.VERCEL_TOKEN }}
+
+      - name: Deploy to Production
+        run: |
+          vercel deploy \
+          --prebuilt \
+          --prod \
+          --token=${{ secrets.VERCEL_TOKEN }}
         env:
           VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
           VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
