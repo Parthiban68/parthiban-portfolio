@@ -175,7 +175,7 @@ const Hero = () => {
           <h2 className={`text-3xl sm:text-4xl md:text-6xl font-bold leading-tight ${isDark ? 'text-white' : 'text-black'}`}
           >
             Innovative&nbsp;<br className="md:hidden" />
-            <span className="text-[#00FF84]">Full-Stack Developer</span><br className="md:block" />
+            <span className="text-[#00FF84]">Software Engineer</span><br className="md:block" />
             <span className={isDark ? 'text-gray-300 text-2xl sm:text-5xl' : 'text-gray-700 text-4xl sm:text-5xl'}>
               Building Scalable APIs & Platforms
             </span>
@@ -183,7 +183,7 @@ const Hero = () => {
 
           <p className={`text-lg sm:text-lg mt-4 max-w-2xl mx-auto ${isDark ? 'text-gray-300' : 'text-gray-800'}`}
           >
-            Hi, I'm Parthiban — a Full Stack Developer with 8 months of experience in Node.js, Express, PostgreSQL,
+            Hi, I'm Parthiban — a Full Stack Developer with 1.6 years of experience in Node.js, Express, PostgreSQL,
             and React.js. I specialize in crafting secure, scalable microservices and intuitive UIs, with proven
             success in optimizing performance and delivering seamless user experiences.
           </p>
